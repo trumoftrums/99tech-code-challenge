@@ -30,7 +30,7 @@ The software module support for managing user scores and a live-updating top-10 
 | ----------------- | -------- | --------------------- |
 | actionId          | string   | Primary key           |
 | actionName        | string   | Action name           |
-| scoreIncrease     | integer  | increase score        |
+| scoreIncrease     | integer  | Increase score        |
 
 ## 3. System Components
 **1. Frontend (Website)**
