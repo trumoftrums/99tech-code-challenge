@@ -1,9 +1,14 @@
 import { Book } from "../models/book.model";
-import { BookAttributes, BookInput } from "../types/book.types"
+import { BookAttributes, BookInput, BookFilter } from "../types/book.types"
+import { WhereOptions } from "sequelize";
 
+const getAllBooks = async (filter?: BookFilter): Promise<BookAttributes[]> => {
+    const where: WhereOptions<Book> = {};
+    if (filter?.publishedYear) {
+        where.publishedYear = filter.publishedYear;
+    }
 
-const getAllBooks = async (): Promise<BookAttributes[]> => {
-    return await Book.findAll();
+    return await Book.findAll({ where });
 }
 
 const getBookById = async (id: number): Promise<BookAttributes | null> => {

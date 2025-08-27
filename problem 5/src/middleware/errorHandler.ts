@@ -1,22 +1,9 @@
 import { Request, Response, NextFunction } from "express";
+import { HttpException } from "../exceptions/httpException";
 
-export const errorHandler = (
-    err: any,
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    console.error("❌ Error:", err);
-
-    // Default values
-    const statusCode = err.statusCode || 500;
+export const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+    const status = err instanceof HttpException ? err.status : 500;
     const message = err.message || "Something went wrong";
 
-    res.status(statusCode).json({
-        success: false,
-        error: {
-            message,
-            ...(process.env.NODE_ENV === "development" && { stack: err.stack }),
-        },
-    });
+    res.status(status).json({ status, message });
 };

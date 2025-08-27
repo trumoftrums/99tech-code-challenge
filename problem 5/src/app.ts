@@ -1,13 +1,15 @@
 import express, { Application } from "express";
-import bodyParser from "body-parser";
+import helmet from "helmet";
+import cors from "cors";
 import bookRoutes from "./resources/books/routes/book.routes";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app: Application = express();
 
 // Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
 
 // Routes
 app.use("/api/books", bookRoutes);

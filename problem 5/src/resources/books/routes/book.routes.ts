@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createBook, getAllBooks, getBookById, updateBook, deleteBook } from "../controllers/book.controller";
-import validateRequest from "../middlewares/validate.middleware";
+import validateRequest from "../../../middleware/validate.middleware";
 import { createBookSchema, updateBookSchema } from "../schemas/book.schema";
 
 const router = Router();

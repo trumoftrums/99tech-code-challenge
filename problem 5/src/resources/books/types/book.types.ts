@@ -15,3 +15,7 @@ export interface BookInput {
     publishedYear: number;
     description: string;
 }
+
+export interface BookFilter {
+  publishedYear?: number;
+}

@@ -1,9 +1,9 @@
 # Document for Problem 5:
 Using ExpressJS and TypeScript to build a CURD APIs for Books resource.
-Using MYSQL database to store data, Sequelize as a ORM
+Using MYSQL database to store data, Sequelize as a ORM.
 
 
-## Main files
+## Folder structure
 1. **server.ts**: Entry point of your application
 2. **app.ts**: Configure the Express app.
 3. **.env**: Stores sensitive configuration
@@ -24,7 +24,7 @@ Using MYSQL database to store data, Sequelize as a ORM
 3. Setup env variables: copy teamplate from `.env.template` to `.env` file and correct with your values
 4. Run in dev mode:
     `npm run dev`
-5. Compile TypeScript:
+5. Compile typescript:
     `npm run build`
 6. Run in production mode:
     `npm start`
@@ -60,7 +60,7 @@ Using MYSQL database to store data, Sequelize as a ORM
 
 4. Get list Books with filter
     ```
-    curl --location 'http://localhost:5000/api/books'
+    curl --location 'http://localhost:5000/api/books?publishedYear=2020'
     ```
 
 5. Delete a Book
