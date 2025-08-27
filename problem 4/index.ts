@@ -1,7 +1,7 @@
 
 function validateInput(n: number): void {
     if (n < 1) {
-        throw new Error('Invalid input n')
+        throw new Error('Invalid input')
     }
 }
 
@@ -44,7 +44,7 @@ function sum_to_n_c(n: number): number {
 function main() {
     const n = 230
 
-    // validate input if needed
+    // validate input
     validateInput(n)
 
     // func A
