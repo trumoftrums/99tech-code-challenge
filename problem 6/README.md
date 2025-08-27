@@ -30,7 +30,7 @@ The software module support for managing user scores and a live-updating top-10 
 | ----------------- | -------- | --------------------- |
 | actionId          | string   | Primary key           |
 | actionName        | string   | Action name           |
-| scoreIncrease     | integer  | Current total score   |
+| scoreIncrease     | integer  | increase score        |
 
 ## 3. System Components
 **1. Frontend (Website)**
@@ -60,7 +60,7 @@ The software module support for managing user scores and a live-updating top-10 
 **API spec**:
     Method: POST
 
-    Endpoint:  /auth/login
+    Endpoint:  /api/auth/login
 
     Request:
 
